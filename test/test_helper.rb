@@ -1,0 +1,6 @@
+require_relative '../lib/joke'
+require_relative '../lib/user'
+require_relative '../lib/open_mic'
+require 'minitest/autorun'
+require 'minitest/pride'
+require 'pry'
