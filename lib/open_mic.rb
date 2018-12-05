@@ -23,6 +23,9 @@ class OpenMic
         all_unique = (!all_performers_jokes.include?(joke)) && all_unique
         all_performers_jokes << joke
       end
+      if !all_unique
+        break
+      end
     end
     return !all_unique
   end
