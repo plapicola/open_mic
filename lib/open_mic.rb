@@ -16,17 +16,13 @@ class OpenMic
 
   def repeated_jokes?
     all_performers_jokes = []
-    all_unique = true
-    @performers.each do |performer|
+    !@performers.inject(true) do |all_unique, performer|
       performer.jokes.each do |joke|
         # Check if current joke is a repeat && ensure no previous repeats
         all_unique = (!all_performers_jokes.include?(joke)) && all_unique
         all_performers_jokes << joke
       end
-      if !all_unique
-        break
-      end
+      all_unique
     end
-    return !all_unique
   end
 end
